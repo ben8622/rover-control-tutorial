@@ -6,8 +6,8 @@ It is highly recommended to use [virtual environments](https://docs.python.org/3
 
 1. Start your virutal environment, if you are using one. How to do this is dependant on your OS, for windows run: `.\.venv\Scripts\activate` where `.venv` is the directory that you created the virtual environment in.
 2. Install the required libraries using the `requirements.txt` file *(there is only one in this tutorial that is not included in python's standard library)* `pip install -r requirements.txt`
-3. flash your Arduino with the `arduino/serial_blink/serial_blink.ino` uploaded to it
-4. grab a USB type A male to type B male *standard arduino cable*
+3. Grab a USB type A male to type B male *standard arduino cable*
+4. Flash your Arduino with the `arduino/serial_blink/serial_blink.ino` in the Arduino IDE
 
 ## Domain Model Diagram
 This is the domain model diagram that represents the system we are building. It is very similar to how the Rover's systems function.  
