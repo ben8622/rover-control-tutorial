@@ -10,3 +10,6 @@ It is highly recommended to use [virtual environments](https://docs.python.org/3
 ## Domain Model Diagram
 This is the domain model diagram that represents the system we are building. It is very similar to how the Rover's systems function.  
 ![Rover Controls Domain Model Diagram](./imgs/rover-controls-DomainModelDiagram.png)  
+
+## Running 
+To run the program(s) you need 
