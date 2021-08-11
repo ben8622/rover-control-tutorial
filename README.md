@@ -1,5 +1,5 @@
 # rover-control-tutorial
-This repo is to demonstrate on a basic level how UTA's mars rover is controlled.
+This repo is to demonstrate on a basic level how UTA's mars rover is controlled. We use a Tkinter GUI to change the rate at which an onboard LED blinks on a Arduino through a server-client architecture using sockets.
 
 ## Setup
 It is highly recommended to use [virtual environments](https://docs.python.org/3/tutorial/venv.html) within python to seperate each of your projects dependancies.  
