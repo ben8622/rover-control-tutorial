@@ -8,8 +8,6 @@ class ClientComms:
     self.PORT = PORT
 
     self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-  def connect(self):
     self.socket.connect((self.HOST, self.PORT))
 
   def send(self, command):

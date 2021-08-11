@@ -2,24 +2,25 @@
 import socket
 import threading
 import time
+from .Arduino import Arduino
 
 class ServerComms:
   def __init__(self, HOST, PORT):
     self.HOST = HOST
     self.PORT = PORT
 
+    ## Connect Arduino
+    self.arduino = Arduino()
+
+    ## Create Server Socket
     self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     self.socket.bind((HOST, PORT))
 
-  def connect(self):
+    ## Wait for client to connect
     self.socket.listen(5)
     self.conn, self.address = self.socket.accept()
-
     self.receive()
-
-    # self.receive_thread = threading.Thread(target=self.receive)
-    # self.receive_thread.start()
 
   def receive(self):
         received = ""
@@ -33,8 +34,13 @@ class ServerComms:
                 self.socket.close()
                 break
             else:
-                print("RECEIVED MSG: " + received)
-                    
+                print("SENDING TO ARDUINO: " + received)
+                response = self.arduino.send(received).decode('utf8')
+                print("Arduino sent: ", response)
 
   def send(self, command):
     self.socket.send(command.encode('utf8'))
+
+  def close(self):
+    self.arduino.close()
+    self.socket.close()
